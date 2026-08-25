@@ -8,6 +8,7 @@ from output.types import (
 from output.handles import VkInstance, VkDevice, VkPhysicalDevice
 from output.loader import vkCreateInstance
 from output.wrapper import Instance, Device
+from output.commands import COMMAND_META
 
 app_info = VkApplicationInfo(apiVersion=(1 << 22))
 create_info = VkInstanceCreateInfo(pApplicationInfo=pointer(app_info))
@@ -53,3 +54,6 @@ print("Device created:", raw_device)
 device.vkDestroyDevice(None)
 instance.vkDestroyInstance(None)
 print("Done - no crash")
+
+print(COMMAND_META["vkCreateDevice"])
+print(COMMAND_META["vkEnumeratePhysicalDevices"])
