@@ -22,9 +22,9 @@ class VkClearRect(Structure):
     pass
 class VkComponentMapping(Structure):
     pass
-class VkPhysicalDeviceLimits(Structure):
-    pass
 class VkPhysicalDeviceSparseProperties(Structure):
+    pass
+class VkPhysicalDeviceLimits(Structure):
     pass
 class VkPhysicalDeviceProperties(Structure):
     pass
@@ -7258,6 +7258,14 @@ VkComponentMapping._fields_ = [
     ("a", c_int32),
 ]
 
+VkPhysicalDeviceSparseProperties._fields_ = [
+    ("residencyStandard2DBlockShape", c_uint32),
+    ("residencyStandard2DMultisampleBlockShape", c_uint32),
+    ("residencyStandard3DBlockShape", c_uint32),
+    ("residencyAlignedMipSize", c_uint32),
+    ("residencyNonResidentStrict", c_uint32),
+]
+
 VkPhysicalDeviceLimits._fields_ = [
     ("maxImageDimension1D", c_uint32),
     ("maxImageDimension2D", c_uint32),
@@ -7365,14 +7373,6 @@ VkPhysicalDeviceLimits._fields_ = [
     ("optimalBufferCopyOffsetAlignment", c_uint64),
     ("optimalBufferCopyRowPitchAlignment", c_uint64),
     ("nonCoherentAtomSize", c_uint64),
-]
-
-VkPhysicalDeviceSparseProperties._fields_ = [
-    ("residencyStandard2DBlockShape", c_uint32),
-    ("residencyStandard2DMultisampleBlockShape", c_uint32),
-    ("residencyStandard3DBlockShape", c_uint32),
-    ("residencyAlignedMipSize", c_uint32),
-    ("residencyNonResidentStrict", c_uint32),
 ]
 
 VkPhysicalDeviceProperties._fields_ = [
@@ -7882,7 +7882,6 @@ VkPipelineShaderStageCreateInfo._fields_ = [
     ("stage", c_int32),
     ("module", VkShaderModule),
     ("pName", c_char_p),
-    ("pName", c_char_p),
     ("pSpecializationInfo", POINTER(VkSpecializationInfo)),
 ]
 
@@ -8050,7 +8049,6 @@ VkGraphicsPipelineCreateInfo._fields_ = [
     ("flags", c_uint32),
     ("stageCount", c_uint32),
     ("pStages", POINTER(VkPipelineShaderStageCreateInfo)),
-    ("pStages", POINTER(VkPipelineShaderStageCreateInfo)),
     ("pVertexInputState", POINTER(VkPipelineVertexInputStateCreateInfo)),
     ("pInputAssemblyState", POINTER(VkPipelineInputAssemblyStateCreateInfo)),
     ("pTessellationState", POINTER(VkPipelineTessellationStateCreateInfo)),
@@ -8071,7 +8069,6 @@ VkPipelineCacheCreateInfo._fields_ = [
     ("sType", c_int32),
     ("pNext", c_void_p),
     ("flags", c_uint32),
-    ("initialDataSize", c_size_t),
     ("initialDataSize", c_size_t),
     ("pInitialData", c_void_p),
 ]
@@ -8659,7 +8656,6 @@ VkSwapchainCreateInfoKHR._fields_ = [
     ("compositeAlpha", c_int32),
     ("presentMode", c_int32),
     ("clipped", c_uint32),
-    ("oldSwapchain", VkSwapchainKHR),
     ("oldSwapchain", VkSwapchainKHR),
 ]
 
@@ -16406,7 +16402,6 @@ VkCommandBufferInheritanceRenderingInfo._fields_ = [
     ("pNext", c_void_p),
     ("flags", c_uint32),
     ("viewMask", c_uint32),
-    ("colorAttachmentCount", c_uint32),
     ("colorAttachmentCount", c_uint32),
     ("pColorAttachmentFormats", POINTER(c_int32)),
     ("depthAttachmentFormat", c_int32),

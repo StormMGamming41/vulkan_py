@@ -7,7 +7,11 @@ class Command_Parser(Base_Parser):
     selection = "commands"
 
     def parse(self, element, registry: Registry):
+        
         for command_el in element.findall("command"):
+            if "vulkan" not in command_el.get("api", "vulkan").split(","):
+                continue  # vulkansc-only command variant, skip
+
             alias = command_el.get("alias")
             if alias:
                 registry.commands[command_el.get("name")] = Command(
@@ -17,7 +21,10 @@ class Command_Parser(Base_Parser):
                 continue
 
             proto = parse_member(command_el.find("proto"))
-            params = [parse_member(p) for p in command_el.findall("param")]
+            params = [
+                parse_member(p) for p in command_el.findall("param")
+                if "vulkan" in p.get("api", "vulkan").split(",")
+            ]
 
             registry.commands[proto.name] = Command(
                 name=proto.name,

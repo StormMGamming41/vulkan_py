@@ -15,7 +15,10 @@ class Struct_Parser(Base_Parser):
         struct = Struct(
             name=name,
             is_union=is_union,
-            members=[parse_member(m) for m in element.findall("member")],
+            members=[
+                parse_member(m) for m in element.findall("member")
+                if "vulkan" in m.get("api", "vulkan").split(",")
+            ],
             returnedonly=element.get("returnedonly") == "true",
             struct_extends=extends.split(",") if extends else None,
             comment=element.get("comment"),
