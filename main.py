@@ -36,7 +36,7 @@ def emit_init() -> str:
 
     return "\n".join(lines)
 
-out_dir = Path("output")
+out_dir = Path("src/vulkan_py")
 out_dir.mkdir(exist_ok=True)
 
 (out_dir / "handles.py").write_text(emit_handles(registry))

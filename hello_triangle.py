@@ -1,5 +1,5 @@
 import glfw
-import output
+from src import vulkan_py as output
 import os
 import ctypes
 from ctypes import c_uint32, c_uint64, c_void_p, c_float, byref, pointer, cast, POINTER, c_char_p
@@ -112,7 +112,7 @@ class App:
         )
         if result != 0:
             raise RuntimeError(f"glfwCreateWindowSurface failed: {result}")
-        self.surface = output.types.VkSurfaceKHR(surface_handle.value)
+        self.surface = output.VkSurfaceKHR(surface_handle.value)
 
     def pick_physical_device(self):
         count = c_uint32(0)

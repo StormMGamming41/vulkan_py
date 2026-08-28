@@ -22,9 +22,9 @@ class VkClearRect(Structure):
     pass
 class VkComponentMapping(Structure):
     pass
-class VkPhysicalDeviceSparseProperties(Structure):
-    pass
 class VkPhysicalDeviceLimits(Structure):
+    pass
+class VkPhysicalDeviceSparseProperties(Structure):
     pass
 class VkPhysicalDeviceProperties(Structure):
     pass
@@ -7258,14 +7258,6 @@ VkComponentMapping._fields_ = [
     ("a", c_int32),
 ]
 
-VkPhysicalDeviceSparseProperties._fields_ = [
-    ("residencyStandard2DBlockShape", c_uint32),
-    ("residencyStandard2DMultisampleBlockShape", c_uint32),
-    ("residencyStandard3DBlockShape", c_uint32),
-    ("residencyAlignedMipSize", c_uint32),
-    ("residencyNonResidentStrict", c_uint32),
-]
-
 VkPhysicalDeviceLimits._fields_ = [
     ("maxImageDimension1D", c_uint32),
     ("maxImageDimension2D", c_uint32),
@@ -7373,6 +7365,14 @@ VkPhysicalDeviceLimits._fields_ = [
     ("optimalBufferCopyOffsetAlignment", c_uint64),
     ("optimalBufferCopyRowPitchAlignment", c_uint64),
     ("nonCoherentAtomSize", c_uint64),
+]
+
+VkPhysicalDeviceSparseProperties._fields_ = [
+    ("residencyStandard2DBlockShape", c_uint32),
+    ("residencyStandard2DMultisampleBlockShape", c_uint32),
+    ("residencyStandard3DBlockShape", c_uint32),
+    ("residencyAlignedMipSize", c_uint32),
+    ("residencyNonResidentStrict", c_uint32),
 ]
 
 VkPhysicalDeviceProperties._fields_ = [
