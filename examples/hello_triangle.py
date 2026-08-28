@@ -1,5 +1,5 @@
 import glfw
-from src import vulkan_py as output
+import vulkan_py as output
 import os
 import ctypes
 from ctypes import c_uint32, c_uint64, c_void_p, c_float, byref, pointer, cast, POINTER, c_char_p

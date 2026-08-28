@@ -4,7 +4,7 @@ import os
 import time
 
 import glfw
-from src import vulkan_py as output
+import vulkan_py as output
 
 from ctypes import (
     POINTER,

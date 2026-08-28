@@ -1,4 +1,4 @@
-# Vulkan-vk-xml-to-py-parser
+# VulkanPy
 
 A Python Vulkan binding generator based on the official Vulkan `vk.xml` registry.
 

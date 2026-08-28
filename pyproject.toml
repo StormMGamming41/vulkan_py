@@ -1,0 +1,39 @@
+[project]
+name = "vulkan_py"
+version = "0.1.0"
+description = "Generate Python ctypes bindings for the Vulkan API from vk.xml."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+
+authors = [
+    { name = "StormMGamming41" }
+]
+
+keywords = [
+    "vulkan",
+    "python",
+    "ctypes",
+    "bindings",
+    "code-generation"
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.optional-dependencies]
+examples = [
+    "glfw>=2.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+vulkan_py = ["*.py"]
