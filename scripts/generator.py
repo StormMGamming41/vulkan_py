@@ -14,10 +14,10 @@ from codegen.emit_structs_functionpointers import emit_structs_and_funcpointers
 from codegen.emit_commands import emit_command_pointers
 
 
-registry = Registry_Parser("vk.xml").parse()
+registry = Registry_Parser("vulkan/vk.xml").parse()
 from resolve import topological_sort_structs, build_extension_map
 
-registry = Registry_Parser("vk.xml").parse()
+registry = Registry_Parser("vulkan/vk.xml").parse()
 struct_order = topological_sort_structs(registry)
 extension_map = build_extension_map(registry)
 counter = Counter()

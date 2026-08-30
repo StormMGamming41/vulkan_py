@@ -1,6 +1,6 @@
 [project]
 name = "vulkan_py"
-version = "0.1.0"
+version = "0.1.1"
 description = "Generate Python ctypes bindings for the Vulkan API from vk.xml."
 readme = "README.md"
 requires-python = ">=3.9"

@@ -1,16 +1,3 @@
-
-# Copyright (C) 2026 StormMGamming41
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
-
 from ctypes import *
 from .enums import *
 from .handles import *
@@ -69,9 +56,9 @@ class VkInstanceCreateInfo(Structure):
             self.sType = VkStructureType.VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO
 class VkQueueFamilyProperties(Structure):
     pass
-class VkMemoryHeap(Structure):
-    pass
 class VkMemoryType(Structure):
+    pass
+class VkMemoryHeap(Structure):
     pass
 class VkPhysicalDeviceMemoryProperties(Structure):
     pass
@@ -7471,14 +7458,14 @@ VkQueueFamilyProperties._fields_ = [
     ("minImageTransferGranularity", VkExtent3D),
 ]
 
-VkMemoryHeap._fields_ = [
-    ("size", c_uint64),
-    ("flags", c_uint32),
-]
-
 VkMemoryType._fields_ = [
     ("propertyFlags", c_uint32),
     ("heapIndex", c_uint32),
+]
+
+VkMemoryHeap._fields_ = [
+    ("size", c_uint64),
+    ("flags", c_uint32),
 ]
 
 VkPhysicalDeviceMemoryProperties._fields_ = [

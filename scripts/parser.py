@@ -6,7 +6,7 @@ from parsers.handle_parser import Handle_Parser
 from parsers.basetype_parser import Base_Type_Parser
 from parsers.bitmask_parser import Bitmask_Parser
 from parsers.enums_group_parser import Enums_Group_Parser
-from parsers.extension_enum_parser import Extension_Enum_Parser
+from parsers.extension_enum_parser import Extension_Enum_Parser, Feature_Enum_Parser
 from parsers.struct_union_parser import Struct_Parser, Union_Parser
 from parsers.functionpointer_parser import Function_Pointer_Parser
 from parsers.commands_parser import Command_Parser
@@ -25,6 +25,7 @@ class Registry_Parser:
         self.register_parser(Bitmask_Parser())
         self.register_parser(Enums_Group_Parser())
         self.register_parser(Extension_Enum_Parser())
+        self.register_parser(Feature_Enum_Parser())
         self.register_parser(Struct_Parser())
         self.register_parser(Union_Parser())
         self.register_parser(Function_Pointer_Parser())
